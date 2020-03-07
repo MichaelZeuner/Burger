@@ -1,5 +1,15 @@
 <app-camera (pictureTaken)="handleImage($event)" *ngIf="webcamImage === null"></app-camera>
 
-<div class="snapshot" *ngIf="webcamImage">
-    <img [src]="webcamImage.imageAsDataUrl" width="300" />
+<div fxLayout="row" fxLayoutAlign="center center" class="snapshot" *ngIf="webcamImage" class="my-1">
+    <img fxFlex="80%" [src]="webcamImage.imageAsDataUrl" width="300" />
+    <mat-icon class="deleteIcon" (click)="webcamImage = null">delete</mat-icon>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="mb-1">
+    <star-rating fxFlex="80%" [starType]="'svg'" size="large" speed="slow" space="between"
+        (ratingChange)="onRatingChange($event)"></star-rating>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button color="primary" (click)="submit()">🍔🍔🍔🍔</button>
 </div>

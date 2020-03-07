@@ -27,4 +27,12 @@ export class DataEntryComponent implements OnInit {
     }
   }
 
+  onRatingChange(event) {
+    console.log(event);
+  }
+
+  submit() {
+
+  }
+
 }

@@ -50,6 +50,7 @@ import { CameraComponent } from './camera/camera.component';
 import { DataEntryComponent } from './data-entry/data-entry.component';
 import { AlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { StarRatingModule } from 'angular-star-rating';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BrowserAnimationsModule,
     WebcamModule,
     FlexLayoutModule,
+    StarRatingModule.forRoot(),
 
     // CDK
     A11yModule,
