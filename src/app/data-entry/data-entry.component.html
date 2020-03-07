@@ -1,0 +1,5 @@
+<app-camera (pictureTaken)="handleImage($event)" *ngIf="webcamImage === null"></app-camera>
+
+<div class="snapshot" *ngIf="webcamImage">
+    <img [src]="webcamImage.imageAsDataUrl" width="300" />
+</div>
