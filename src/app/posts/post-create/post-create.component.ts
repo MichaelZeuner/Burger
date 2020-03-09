@@ -1,18 +1,18 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WebcamImage, WebcamInitError } from 'ngx-webcam';
-import { DataService } from '../data.service';
+import { PostService } from '../post.service';
 
 @Component({
-  selector: 'app-data-entry',
-  templateUrl: './data-entry.component.html',
-  styleUrls: ['./data-entry.component.scss']
+  selector: 'app-post-create',
+  templateUrl: './post-create.component.html',
+  styleUrls: ['./post-create.component.scss']
 })
-export class DataEntryComponent implements OnInit {
+export class PostCreateComponent implements OnInit {
 
   // latest snapshot
   public webcamImage: WebcamImage = null;
 
-  constructor(private data: DataService) { }
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
   }
@@ -33,7 +33,8 @@ export class DataEntryComponent implements OnInit {
   }
 
   submit() {
-    this.data.addPost({
+    this.postService.addPost({
+      id: null,
       name: 'a new name',
       content: 'some shit'
     })
