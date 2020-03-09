@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WebcamImage, WebcamInitError } from 'ngx-webcam';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-data-entry',
@@ -11,7 +12,7 @@ export class DataEntryComponent implements OnInit {
   // latest snapshot
   public webcamImage: WebcamImage = null;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
   }
@@ -32,7 +33,10 @@ export class DataEntryComponent implements OnInit {
   }
 
   submit() {
-
+    this.data.addPost({
+      name: 'a new name',
+      content: 'some shit'
+    })
   }
 
 }

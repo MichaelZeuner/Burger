@@ -47,10 +47,13 @@ import { CdkTableModule } from '@angular/cdk/table'; import {
   MatTooltipModule,
 } from '@angular/material';
 import { CameraComponent } from './camera/camera.component';
-import { DataEntryComponent } from './data-entry/data-entry.component';
+import { DataEntryComponent } from './data/data-entry/data-entry.component';
 import { AlertDialogComponent } from './dialogs/alert-dialog/alert-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { StarRatingModule } from 'angular-star-rating';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { DataListComponent } from './data/data-list/data-list.component';
 
 @NgModule({
   declarations: [
@@ -58,12 +61,15 @@ import { StarRatingModule } from 'angular-star-rating';
     CameraComponent,
     DataEntryComponent,
     AlertDialogComponent,
+    HeaderComponent,
+    DataListComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     WebcamModule,
     FlexLayoutModule,
     StarRatingModule.forRoot(),
