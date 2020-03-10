@@ -34,7 +34,7 @@ export class PostCreateComponent implements OnInit {
 
   submit() {
     this.postService.addPost({
-      id: null,
+      _id: null,
       name: 'a new name',
       content: 'some shit'
     })

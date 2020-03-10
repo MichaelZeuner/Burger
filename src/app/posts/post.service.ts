@@ -27,7 +27,7 @@ export class PostService {
   }
 
   addPost(post: Post) {
-    this.http.post('http://localhost:3000/api/posts', post).subscribe((createdPost: Post) => {
+    this.http.post<Post>('http://localhost:3000/api/posts', post).subscribe(createdPost => {
       console.log('added post');
       this.posts.push(createdPost);
       this.postsUpdated.next([...this.posts]);
